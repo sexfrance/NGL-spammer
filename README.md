@@ -36,7 +36,7 @@ The Instagram NGL Spammer is a Python tool that lets you send multiple messages 
 ---
 #### 📹 Preview
 
-![Preview](https://i.imgur.com/YI6RZ5P.gif)
+![Preview](https://i.imgur.com/OmwGQxZ.gif)
 
 ---
 ### ❗ Disclaimers
