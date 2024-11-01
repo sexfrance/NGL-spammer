@@ -60,6 +60,3 @@ v0.0.1 ⋮ 30/10/2024
   <img src="https://img.shields.io/github/stars/sexfrance/NGL-spammer.svg?style=for-the-badge&labelColor=black&color=f429ff&logo=IOTA"/>
 >   <img src="https://img.shields.io/github/languages/top/sexfrance/NGL-spammer.svg?style=for-the-badge&labelColor=black&color=f429ff&logo=python"/>
 </p>
-
-
-Inspired by [Turnaround](https://github.com/Body-Alhoha/turnaround)
