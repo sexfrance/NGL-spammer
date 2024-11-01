@@ -3,6 +3,7 @@ import yaml
 import random
 import time
 import uuid
+
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from logmagix import Logger, Home
 import threading
@@ -10,10 +11,9 @@ import threading
 log = Logger()
 home = Home("Configuration", "center", credits="discord.cyberious.xyz").display()
 
-stop_event = threading.Event()  # Event to signal threads to stop
+stop_event = threading.Event()
 
 try:
-    # Load configuration
     with open('config.yaml', 'r') as f:
         config = yaml.safe_load(f)
         username = config.get("Username") or log.question("Please enter the NGL.link username of the victim: ")
@@ -22,17 +22,13 @@ try:
         threads = int(config.get("Threads") or log.question("Please enter the amount of threads: "))
         proxyless = config.get("Proxyless", True)
         bypass_block = config.get("BypassBlock", False)
-
-    # Initialize proxies if not proxyless
     proxies = []
     if not proxyless:
         with open('proxies.txt', 'r') as f:
             proxies = [line.strip() for line in f if line.strip()]
 
-    adinfo = f"Loaded Proxies: {len(proxies)}" if not proxyless else "Proxyless Mode Enabled"
-    home = Home("NGL spammer", "center", credits="discord.cyberious.xyz", adinfo1=adinfo).display()
+    home = Home("NGL spammer", "center", credits="discord.cyberious.xyz", adinfo1=f"Loaded Proxies: {len(proxies)}" if not proxyless else "Proxyless Mode Enabled").display()
 
-    # Base payload and headers
     base_payload = f"username={username}&question={question}"
     headers = {
         "host": "ngl.link",
@@ -63,7 +59,6 @@ try:
 
         if stop_event.is_set():
             return False
-        
         try:
             response = requests.post("https://ngl.link/api/submit", data=payload, headers=headers, proxies=get_proxy_dict(), timeout=5)
             if response.status_code == 200:

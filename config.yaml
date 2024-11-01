@@ -1,7 +1,7 @@
 Username: "" # Ngl.link username of victim, if None the script will ask.
-Question: "" # Question, or message the spammer will send
-Number: 0 # Number of times the message will be sent
-Threads: 0 # Number of threads, the more the faster the spammer will send the messages, if you put too much you will likely crash. Put between 10-50, if you are confident your pc is strong, you can add more
+Question: "" # Question, or message the spammer will send if None the script will ask.
+Number: 0 # Number of times the message will be sent if None the script will ask.
+Threads: 0 # Number of threads, the more the faster the spammer will send the messages, if you put too much you will likely crash. Put between 10-50, if you are confident your pc is strong, you can add more if None the script will ask.
 
 Proxyless: false # To use proxy or no true = won't use false = will use
 BypassBlock: true # To use bypass the block button on NGL.link. The script will be a bit slower
